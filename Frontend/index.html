@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat with your PDF notes using AI-powered retrieval">
+    <title>AskMyNotes - AI-Powered PDF Q&A</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AskMyNotes</h1>
+        <p>Chat with your PDF notes using AI-powered retrieval.</p>
+    </header>
+
+    <main>
+        <section>
+            <label for="pdf-input">📄 Upload your notes (PDF)</label>
+            <input type="file" id="pdf-input" accept=".pdf" aria-label="Upload PDF file">
+            <p id="upload-status">No file uploaded yet.</p>
+        </section>
+
+        <section>
+            <label for="question">❓ Your question</label>
+            <textarea id="question" rows="3" placeholder="What do my notes say about..." aria-label="Enter your question"></textarea>
+            <button id="ask-btn" type="button">Submit</button>
+            <p id="status"></p>
+        </section>
+
+        <section>
+            <h2>Answer</h2>
+            
+            <div id="meta">
+                <span id="type-pill" hidden></span>
+                <span id="tool-pill" hidden></span>
+            </div>
+
+            <div id="answer">
+                <p id="answer-text">Your answer will appear here...</p>
+            </div>
+            
+            <details id="sources-wrap" hidden>
+                <summary>Sources (top chunks used)</summary>
+                <ol id="sources"></ol>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built as part of the AI Engineering Bootcamp</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
